@@ -14,7 +14,9 @@ using namespace std;
 
 int main(){
 	int Buscaminas[10][10];
-	
+	int contador;
+	int finalBuscaminas[10][10];
+	int NuevaColumna,NuevaFila;
 	srand(time(0));
 	
 	
@@ -39,7 +41,34 @@ int main(){
 	int deltaY[]={-1,  0,  1, -1, 1, -1, 0, 1};
 	
 	
+	//reconocimiento de las 8 casillas alrededor
 	
+	for(int i=0; i<10; i++){
+		for(int j=0; j<10; j++){
+			contador=0;
+			for(int k=0; k<8; k++){
+				NuevaFila = i + deltaX[k];
+				NuevaColumna = j + deltaY[k];
+				
+				if(NuevaFila>=0 && NuevaFila<10 && NuevaColumna>=0 && NuevaColumna<10){
+					if(Buscaminas[NuevaFila][NuevaColumna] == 1){
+						contador = contador + 1;
+					}
+				}
+			}
+			finalBuscaminas[i][j]=contador; 
+		}
+	}
+	
+	cout<<endl;
+	cout<<endl;
+	
+	for(int i=0; i<10; i++){
+		for(int j=0; j<10; j++){
+			cout<<finalBuscaminas[i][j]<<" "; 
+		}
+		cout<<endl;
+	}
 	
 	return 0;
 }
