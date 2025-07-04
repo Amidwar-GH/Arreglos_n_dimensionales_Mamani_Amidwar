@@ -20,9 +20,9 @@ int main(){
 	srand(time(0));
 	
 	
-	cout<<"***********************************\n";
-	cout<<"* El tablero inicial del juego es *\n";
-	cout<<"***********************************\n";
+	cout<<"*************************************\n";
+	cout<<"* BIENVENIDO AL JUEGO DE BUSCAMINAS *\n";
+	cout<<"*************************************\n";
 	
 	for(int i=0; i<10; i++){
 		for(int j=0; j<10; j++){
@@ -30,16 +30,15 @@ int main(){
 		}
 	}
 	
-	for(int i=0; i<10; i++){
+	/*for(int i=0; i<10; i++){
 		for(int j=0; j<10; j++){
 			cout<<Buscaminas[i][j]<<" "; 
 		}
 		cout<<endl;
-	}
+	}*/
 	
 	int deltaX[]={-1, -1, -1,  0, 0, 1, 1, 1};
 	int deltaY[]={-1,  0,  1, -1, 1, -1, 0, 1};
-	
 	
 	//reconocimiento de las 8 casillas alrededor
 	
@@ -63,9 +62,19 @@ int main(){
 	cout<<endl;
 	cout<<endl;
 	
+	cout<<"TABLERO INICIAL \t   TABLERO FINAL"<<endl;
+	
 	for(int i=0; i<10; i++){
+		
+		
 		for(int j=0; j<10; j++){
-			cout<<finalBuscaminas[i][j]<<" "; 
+			cout<<Buscaminas[i][j]<<" ";
+		}
+		
+		cout<<"\t";
+		
+		for(int l=0; l<10; l++){
+			cout<<finalBuscaminas[i][l]<<" ";
 		}
 		cout<<endl;
 	}
