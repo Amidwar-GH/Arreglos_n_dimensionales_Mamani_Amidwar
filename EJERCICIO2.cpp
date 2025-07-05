@@ -17,6 +17,9 @@ using namespace std;
 
 int main(){
 	int Matriz[3][3];
+	int Posiciones[3][3];
+	int Busqueda;
+	char bandera = 'F';
 	
 	srand(time(0));
 	
@@ -24,6 +27,31 @@ int main(){
 		for(int j=0; j<3; j++){
 			Matriz[i][j] = rand()%9+1;
 		}
+	}
+	
+	cout<<"\nMatriz.\n";
+	cout<<endl;
+	for(int i=0; i<3; i++){
+		for(int j=0;j<3;j++){
+			cout<<Matriz[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+	
+	cout<<endl;
+	cout<<"Digite un valor a buscar: "; cin>>Busqueda;
+	
+	for(int i=0; i<3; i++){
+		for(int j=0; j<3; j++){
+			if(Matriz[i][j] == Busqueda){
+				cout<<"Fila "<<i<<","<<" columna "<<j<<endl;
+				bandera='V';
+			}
+		}
+	}
+	
+	if(bandera == 'F'){
+		cout<<"El valor que se digito no se encuentra."<<endl;
 	}
 	
 	
