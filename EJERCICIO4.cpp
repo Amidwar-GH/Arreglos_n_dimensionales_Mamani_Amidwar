@@ -35,6 +35,7 @@ int main(){
 		}
 	}
 	
+	cout<<"Matriz inicial."<<endl;
 	for(int i=0; i<4; i++){
 		for(int j=0; j<4; j++){
 			cout<<Matriz[i][j]<<" ";
@@ -42,12 +43,16 @@ int main(){
 		cout<<endl;
 	}
 	
-	cout<<"\nDigite las filas a intercambiar"<<endl;
-	cout<<"Fila: ";
-	cin>>F1;
-	cout<<"Fila: ";
-	cin>>F2;
+	do{
+		cout<<"\nDigite las filas a intercambiar"<<endl;
+		cout<<"Fila: ";
+		cin>>F1;
+		cout<<"Fila: ";
+		cin>>F2;
+	}while(F1<0 || F1>3 || F2<0 || F2>3);
 	
+	
+	cout<<endl;
 	
 	for(int j=0; j<4; j++){
 		auxiliar = Matriz[F1][j];
@@ -56,6 +61,7 @@ int main(){
 	}
 	
 	
+	cout<<"Matriz final."<<endl;
 	for(int i=0; i<4; i++){
 		for(int j=0; j<4; j++){
 			cout<<Matriz[i][j]<<" ";
