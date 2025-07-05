@@ -34,25 +34,24 @@ int main (){
 		}
 	}
 	
+	cout<<"MatrizA        MatrizB          Resultado"<<endl;
+	cout<<endl;
+	
 	for(int i=0; i<3; i++){
 		for(int j=0; j<3; j++){
 			cout<<matrizA[i][j]<<" ";
 		}
-		cout<<endl;
-	}
-	
-	cout<<endl;
-	
-	for(int i=0; i<3; i++){
+		
+		cout<<"\t";
+		cout<<"\t";
+		
 		for(int j=0; j<3; j++){
 			cout<<matrizB[i][j]<<" ";
 		}
-		cout<<endl;
-	}
-	
-	cout<<endl;
-	
-	for(int i=0; i<3; i++){
+		
+		cout<<"\t";
+		cout<<"\t";
+		
 		for(int j=0; j<3; j++){
 			cout<<resultado[i][j]<<" ";
 		}
