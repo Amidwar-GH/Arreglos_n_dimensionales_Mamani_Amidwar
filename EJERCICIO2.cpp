@@ -17,7 +17,6 @@ using namespace std;
 
 int main(){
 	int Matriz[3][3];
-	int Posiciones[3][3];
 	int Busqueda;
 	char bandera = 'F';
 	
