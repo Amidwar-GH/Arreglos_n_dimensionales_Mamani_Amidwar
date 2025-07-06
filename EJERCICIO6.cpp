@@ -23,23 +23,40 @@ using namespace std;
 
 int main(){
 	int Matriz[6][6];
+	int MatrizRX[6][6];
 	
 	srand(time(0));
 	
+	//LLENADO DE MATRIZ
 	for(int i=0; i<6; i++){
 		for(int j=0; j<6; j++){
 			Matriz[i][j] = rand()%9+1;
 		}
 	}
 	
-	cout<<"Matriz"<<endl;
+	//Cambio reflejado a otra matriz
+	for(int i=0; i<6; i++){
+		for(int j=0; j<6; j++){
+			MatrizRX[i][j] = Matriz[i][5-j];
+		}
+	}
+	
+	//Salida
+	
+	cout<<"Matriz          Matriz reflejada horizontalmente"<<endl; 
+	cout<<endl;
 	for(int i=0; i<6; i++){
 		for(int j=0; j<6; j++){
 			cout<<Matriz[i][j]<<" ";
 		}
+		
+		cout<<"\t";
+		
+		for(int j=0; j<6; j++){
+			cout<<MatrizRX[i][j]<<" ";
+		}
 		cout<<endl;
 	}
-	
 	
 	return 0;
 }
