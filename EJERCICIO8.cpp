@@ -41,6 +41,34 @@ int main(){
         cout << endl;
     }
 	
+	int deltaX[4] = {0,1,0,-1};
+	int deltaY[4] = {1,0,-1,0};
+	
+	int x=0;
+	int direccion = 0;
+	int y=0;
+	
+	
+	cout<<"\nRecorrido en espiral: "<<endl;
+	for(int i=0; i<N*N; i++){
+		cout<<Matriz[x][y]<<" ";
+		Rep[x][y] = true;
+		
+		int nx = x+deltaX[direccion];
+		int ny = y+deltaY[direccion];
+		
+		if(nx<0 || nx>=N || ny<0 || ny>=N || Rep[nx][ny]){
+			direccion = (direccion+1)%4;
+			nx = x+deltaX[direccion];
+			ny = y+deltaY[direccion];
+		}
+		
+		x=nx;
+		y=ny;
+	}
+	
+	cout<<endl;
+	cout<<endl;
 	
 	return 0;
 }
