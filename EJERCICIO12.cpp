@@ -30,12 +30,12 @@ int main(){
 		}
 	}
 	
-	for(int i=0; i<10; i++){
+	/*for(int i=0; i<10; i++){
 		for(int j=0; j<10; j++){
 			cout<<MatrizInicial[i][j]<<" ";
 		}
 		cout<<endl;
-	}
+	}*/
 	
 	int deltaX[]={-1,-1,-1,0,0,1,1,1};
 	int deltaY[]={-1,0,1,-1,1,-1,0,1};
@@ -70,7 +70,19 @@ int main(){
 	}
 	
 	
-	
+	cout<<"Tablero inicial         Segunda generacion"<<endl;
+	for(int i=0; i<10; i++){
+		for(int j=0; j<10; j++){
+				cout<<MatrizInicial[i][j]<<" ";
+		}
+		
+		cout<<"\t";
+		
+		for(int j=0; j<10; j++){
+			cout<<MatrizFinal[i][j]<<" ";
+		}
+		cout<<endl;	
+	}
 	
 	
 	return 0;
