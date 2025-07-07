@@ -17,6 +17,8 @@ número de celdas vivas adyacentes:
 using namespace std;
 
 int main(){
+	int FILA,COLUMNA;
+	int CelViva=0;
 	int MatrizInicial[10][10];
 	int MatrizFinal[10][10];
 	
@@ -34,6 +36,40 @@ int main(){
 		}
 		cout<<endl;
 	}
+	
+	int deltaX[]={-1,-1,-1,0,0,1,1,1};
+	int deltaY[]={-1,0,1,-1,1,-1,0,1};
+	
+	for(int i=0; i<10; i++){
+		for(int j=0; j<10; j++){
+			CelViva=0;
+			
+			for(int k=0; k<8; k++){
+				FILA=i+deltaX[k];
+				COLUMNA= j+deltaY[k];
+				
+				if(FILA>=0 && FILA<10 && COLUMNA>=0 && COLUMNA<10){
+					CelViva = CelViva + MatrizInicial[FILA][COLUMNA];
+				}
+			}
+			
+			if(MatrizInicial[i][j] == 1){
+				if(CelViva<2 || CelViva>3){
+					MatrizFinal[i][j]=0;
+				}else{
+					MatrizFinal[i][j]=1;
+				}
+			}else{
+				if(CelViva==3){
+					MatrizFinal[i][j]=1;
+				}else{
+					MatrizFinal[i][j]=0;
+				}
+			}
+		}
+	}
+	
+	
 	
 	
 	
