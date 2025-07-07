@@ -14,9 +14,10 @@ using namespace std;
 
 int main(){
 	int Bosque[10][10];
-	int PrimerFuego[10][10];
+	int PrimerIncendio[10][10];
 	int SegundoFuego[10][10];
-	
+	int contador;
+	char bandera;
 	//inicializamos el generador de numeros;
 	srand(time(0));
 	
@@ -33,19 +34,40 @@ int main(){
 		cout<<endl;
 	}
 	
-	/*int deltaX[]={-1, 1, 1, -1, -1, 0, 0, 1};
+	int deltaX[]={-1, 1, 1, -1, -1, 0, 0, 1};
 	int deltaY[]={-1, -1, 1, 1, 0, -1, 1, 0};
 	
-	int(i=0; i<10; i++){
-		int (j=0; j<10; j++){
-			contador=0;
-			int(k=0; k<10; k++){
-				nuevaFila = i+deltaX[k];
-				nuevaColumna = i+deltaY[k];
-				
+	for(int i=0; i<10; i++){
+		for(int j=0; j<10; j++){
+			if(Bosque[i][j]==0){
+				bandera='F';
+				for(int k=0; k<8; k++){
+					int fila = i + deltaX[k];
+					int columna = j + deltaY[k];
+					if(fila>=0 && fila<10 && columna>=0 && columna<10){
+						if(Bosque[fila][columna] == 1){
+							bandera = 'V';
+							break;
+						}
+					}
+				}
+				if(bandera == 'V'){
+					PrimerIncendio[i][j] = 1;
+				}else{
+					PrimerIncendio[i][j] = 0;
+				}
+			}
+			else if(Bosque[i][j] == 1){
+				PrimerIncendio[i][j]=2;
+			}
+			else{
+				PrimerIncendio[i][j]=2;
 			}
 		}
-	}*/
+	}
+	
+	
+	
 	
 	return 0;
 }
