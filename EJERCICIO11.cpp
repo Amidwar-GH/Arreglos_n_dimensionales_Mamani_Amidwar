@@ -15,8 +15,6 @@ using namespace std;
 int main(){
 	int Bosque[10][10];
 	int PrimerIncendio[10][10];
-	int SegundoFuego[10][10];
-	int contador;
 	char bandera;
 	//inicializamos el generador de numeros;
 	srand(time(0));
@@ -25,13 +23,6 @@ int main(){
 		for(int j=0; j<10; j++){
 			Bosque[i][j] = rand()%2;
 		}
-	}
-	//PARA VERIFICAR SI SE LLENO EL ARREGLO LUEGO SE SUPRIME 
-	for(int i=0; i<10; i++){
-		for(int j=0; j<10; j++){
-			cout<<Bosque[i][j]<<" "; 
-		}
-		cout<<endl;
 	}
 	
 	int deltaX[]={-1, 1, 1, -1, -1, 0, 0, 1};
@@ -66,7 +57,20 @@ int main(){
 		}
 	}
 	
-	
+	cout<<"Bosque inicial          Bosque despues de la propagacion."<<endl;
+	cout<<endl;
+	for(int i=0; i<10; i++){
+		for(int j=0; j<10; j++){
+			cout<<Bosque[i][j]<<" ";
+		}
+		
+		cout<<"\t";
+		
+		for(int j=0; j<10; j++){
+			cout<<PrimerIncendio[i][j]<<" ";
+		}
+		cout<<endl;
+	}
 	
 	
 	return 0;
